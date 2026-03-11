@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/lab1_example2.dir/lab1/example2.cpp.o CMakeFiles/lab1_example2.dir/helpers/ShaderHelper.cpp.o -o lab1_example2  lib/glfw/src/libglfw3.a lib/glad/libglad.a /usr/lib/x86_64-linux-gnu/librt.a -lm -ldl 
