@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CITS3003 Computer Graphics and Animation</title>
+	
+	
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    
+
+	
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+			 background: linear-gradient(to right, #FFFFFF, #E0FFFF, #AFEEEE, #48D1CC, #40E0D0);
+		h1 { font-size: 2em; color: navy; font-weight: bold; }
+		h2 { font-size: 1.5em; color: olive; font-weight: normal; }
+		h3 { font-size: 1.6em; color: navy; font-weight: bold; border-bottom: 1px solid black; padding-bottom: 5px; margin-bottom: 10px; }
+		h4 { text-shadow: 2px 2px 2px #aaa; font-size: 1.5em; color: navy; font-weight: normal; }
+		h5 { background-color: lightgrey; padding: 5px; }
+		h6 { border-bottom: 1px solid black; padding-bottom: 5px; margin-bottom: 10px; }
+		
+		code {
+			font-family: 'Courier New', monospace; /* Monospace font for code */
+			background-color: #f5f5f5; /* Light grey background */
+			border: 1px solid #ccc; /* Subtle border */
+			border-radius: 3px; /* Rounded corners for a modern look */
+			padding: 2px 4px; /* Padding for better readability */
+			font-size: 90%; /* Slightly smaller font size than the surrounding text */
+		}		
+    /* Preformatted blocks (multi-line code) should match the inline code style */
+    pre {
+      font-family: 'Courier New', monospace;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 8px;
+      font-size: 90%;
+      overflow: auto;
+      white-space: pre-wrap; /* allow long lines to wrap while preserving line breaks */
+      margin: 0.5em 0;
+    }
+    pre code {
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+		
+		ol {
+				padding-left: 20px; /* Adjusts padding inside the list */
+				margin-bottom: 15px; /* Space below each list */
+				margin-left: 20px; /* Adjust as needed */
+			}
+			li {
+				margin-bottom: 10px; /* Space between list items */
+			}
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			margin-left: 0;
+		}
+			}
+		
+		th, td {
+			border: 1.5px solid black; /* Light grey border */
+			padding: 8px; /* Spacing inside cells */
+		}
+		th {
+			text-align: left; /* Align header text to the left */
+			background-color: #f2f2f2; /* Light grey background for headers */
+			padding-top: 12px;
+			padding-bottom: 12px;
+		}
+		td {
+			text-align: left; /* Align cell text to the left */
+		}
+		tr:hover {background-color: #ddd;}
+		
+}
+    <!-- More rows and cells here -->
+</table>
+
+			
+     </style> 	
+	 <style  TYPE="text/css">  
+    .paraHead { font-weight: bold; }
+    .important { background: #ffeeaa ; margin: 5px 0px 2px 0px; }
+    .newImportant { background: #ffff00 ! important; margin: 5px 0px 2px 0px; }
+    .solution:link { background: #aaaaaa ; margin: 5px 0px 2px 15px; }
+    .reading { align=right }
+    .deleted { text-decoration: line-through; }
+	
+		
+
+    </style>
+	
+	<script type="text/javascript">
+	//<![CDATA[
+	var pageTracker = window.pageTracker;
+	uwaCore.jsLazyLoad('http://static.weboffice.uwa.edu.au/stats/uwa_ga.js', function() {
+	  var trackerId = 'UA-7622267-1';
+		if ( trackerId != '' ) { try {
+		  pageTracker = _gat._getTracker(trackerId);
+		  pageTracker._setDomainName(".uwa.edu.au");
+		  pageTracker._trackPageview();
+		} catch(err) {} } });
+	//]]>
+	</script>
+
+	
+	  
+</head>
+
+
+<body>
+    <header>
+        <h1>Lab 1. Getting Started with OpenGL and 2D graphics</h1>
+        <!-- Add navigation menu or logo here -->
+    </header>
+
+    <main>
+        <section>
+		
+		<h4>Objectives:</h4>
+		In this lab's exercises, you will <br>
+      <ul>
+        <li>need to download and extract the libraries and OpenGL examples associated with the recommended text,<br>
+        </li>
+        <li>learn how to compile and execute some 2D examples, <br>
+		
+        </li>
+        <li>make some small changes to the code of these examples, <br/>
+        </li>
+        <li>build an "absolutely minimal scene editor" (you won't believe how minimal!)<br/>
+        </li>
+      </ul>
+
+    <ol style="list-style-type:upper-roman"> <li><h3 class="underline">Downloading and extracting</h3>
+		
+    <ol style="list-style-type:lower-alpha">
+          <li> Create a directory (folder) in your home directory (e.g., <code>cits3003</code>) to keep all your
+work for this unit.
+         <li> Download <code><a href="https://lms.uwa.edu.au/bbcswebdav/pid-3748025-dt-content-rid-45819289_1/xid-45819289_1">cits3003_labs.zip</a></code> to this directory.</a>
+         <li> Extract the files from the zip file, either via the right-click menu in the folder or use this terminal command if you use Linux: <br>
+              &nbsp&nbsp<code>unzip cits3003_labs.zip</code>
+         <!-- <li> Check that you now have a folder with all the examples for the various chapters of the recommended text. -->
+        </ol>
+
+		
+        <!-- More sections as needed -->
+		
+   <li><h3 class="underline">Building and executing</h3>
+	
+    <ol style="list-style-type:lower-alpha">
+		<li> Refer to <code>setup_guide.pdf</code> to install necessary libraries and how to build the code. 
+    <li> Follow the guide and build the first program from <code>lab1/example1.cpp</code>
+    <li> Execute the first example. You should see an OpenGL window like the following opens with many points drawn from the Sierpinski Gasket, and close it by pressing Escape. <p>
+			<img src="media/lab1_example.png">	
+		</ol>
+		
+
+	<li><h3 class="underline">Q1. Instantiating, building and executing your own OpenGL program</h3>
+  <ol style="list-style-type:lower-alpha">
+         <li> For the rest of this lab (as well as future labs), you will create your own <code>.cpp</code> files and put them into 
+          corresponding lab directory (e.g. <code>lab1</code> for this lab).
+         <li> Copy <code>lab1/example1.cpp</code> to <code>lab1/q1circle.cpp</code>. 
+         <li> Edit <code>q1circle.cpp</code> with your favourite editor - if you don't have a favourite yet, just double
+         click for the default or right click to select one.
+         <li> Read through the code.   For now, don't worry too much about all the OpenGL commands, you will encounter those in the lectures.
+         <li> Your goal is to modify this program (i.e., the <code>q1circle.cpp</code> file) so
+         that it generates the same number of points, but when a point is not inside a circle
+         of radius 1.0 centred at the origin, i.e, (0.0,0.0), it skips it and chooses another point. <br><br>
+         <b>Hints:</b>
+         <ul>
+         <li>the function <code>length(p)</code> will return the distance from
+             a point <code>p</code> to the origin.</li>
+         <li>you can do this just by adding two lines of code.</li>
+         </ul>
+         </p> 
+        
+         <li> If you need hints on geometry or programming, just ask in the lab.</a>
+         <li> Follow the guide <code>setup_guide.pdf</code> to build your program. Make sure that in <code>CMakeLists.txt</code> has the correct build command:
+          <pre><code>add_executable(lab1_q1circle lab1/q1circle.cpp helpers/ShaderHelper.cpp)
+configure_lab_target(lab1_q1circle)</code></pre>
+              Execute and test it, and verify that produces something similar to the
+         following.  
+
+         <br><p> <img src="media/lab1_q1.png"> <br>
+		</ol>
+	<li><h3 class="underline">Q2. Building an "absolutely minimal scene editor"</h3>
+  <ol style="list-style-type:lower-alpha">
+         <li> Similarly make a second copy <code>q2pointsScene.cpp</code> from <code>example1.cpp</code> 
+         and modify it to implement an
+         "absolutely minimal scene editor" that simply allows you to directly specify a "scene" of
+         2D points in the <code>points</code> array similarly to the way the <code>vertices</code>
+         array is specified in the original code.  <br><br><p>
+
+         <b>Hint:</b> you really don't need to write any code here, just list the coordinates
+         that <code>points</code> is initialized with, and remove the code that previously set the coordinates. 
+
+         <li> Arrange some points in a scene.  Here's a sample arrangement:
+
+         <br><br><p> <img src="media/lab1_q2.png">
+
+
+         <br><br><p> (Now all we need is solid shapes, colours,
+         3D, rotations, camera movement, complex shapes, perspective, lighting, materials, textures and animation.
+         Oh, and editing without having to change the program.)
+       </ol>
+
+
+	<li><h3 class="underline">Q3.Building an "almost absolutely minimal scene editor"</h3>
+  <ol style="list-style-type:lower-alpha">
+         <li> Similarly make a copy <code>q3triangleScene.cpp</code> from <code>example2.cpp</code> and modify it to implement an
+         "almost absolutely minimal scene editor" that simply allows you to directly specify a "scene" of
+         2D triangles in the <code>points</code> array. Remember to replace <code>glDrawArrays(GL_POINTS, 0, NumPoints)</code> with <code>glDrawArrays(GL_TRIANGLES, 0, NumPoints)</code>.
+         <br> 
+         <li> Arrange some triangles in a scene.  Here's a sample arrangement: 
+
+           <br><br><p> <img src="media/lab1_q3.png">
+
+         <br><br><p>
+         (Now all we need is colours,
+         3D, rotations, camera movement, complex shapes, perspective, lighting, materials, textures and animation.
+         Oh, and editing without having to change the program.)
+       </ol>
+
+	<!-- <li><h3 class="underline">Building a "mostly absolutely minimal scene editor" (optional)</h3>
+        <ul>
+         <li> Use the remaining Chapter 2 examples to help you add colour and simple 3D to your triangle scene editor.
+       </ul> -->
+
+<p></p>
+
+	</ol>
+			
+	  </section>
+    </main>
+
+    <footer>
+        < <div align="right"><small><b><a href="#top">BACK TO TOP</a></b></small></div>
+</div>
+    </footer>
+
+    <script>
+        // Add JavaScript here
+    </script>
+</body>
+
+
+
+
+</html>
