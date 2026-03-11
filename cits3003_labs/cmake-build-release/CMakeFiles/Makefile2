@@ -66,6 +66,7 @@ CMAKE_BINARY_DIR = /home/iroha/CITS3003/cits3003_labs/CITS3003-graphics-animatio
 all: CMakeFiles/lab1_example1.dir/all
 all: CMakeFiles/lab1_example2.dir/all
 all: CMakeFiles/lab1_q1circle.dir/all
+all: CMakeFiles/lab1_q2pointsScene.dir/all
 all: lib/glad/all
 all: lib/glfw/all
 all: lib/glm/all
@@ -81,6 +82,7 @@ preinstall: lib/glm/preinstall
 clean: CMakeFiles/lab1_example1.dir/clean
 clean: CMakeFiles/lab1_example2.dir/clean
 clean: CMakeFiles/lab1_q1circle.dir/clean
+clean: CMakeFiles/lab1_q2pointsScene.dir/clean
 clean: lib/glad/clean
 clean: lib/glfw/clean
 clean: lib/glm/clean
@@ -245,6 +247,33 @@ CMakeFiles/lab1_q1circle.dir/clean:
 .PHONY : CMakeFiles/lab1_q1circle.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/lab1_q2pointsScene.dir
+
+# All Build rule for target.
+CMakeFiles/lab1_q2pointsScene.dir/all: lib/glad/CMakeFiles/glad.dir/all
+CMakeFiles/lab1_q2pointsScene.dir/all: lib/glfw/src/CMakeFiles/glfw.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q2pointsScene.dir/build.make CMakeFiles/lab1_q2pointsScene.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q2pointsScene.dir/build.make CMakeFiles/lab1_q2pointsScene.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/iroha/CITS3003/cits3003_labs/CITS3003-graphics-animation/cits3003_labs/cmake-build-release/CMakeFiles --progress-num=36,37,38 "Built target lab1_q2pointsScene"
+.PHONY : CMakeFiles/lab1_q2pointsScene.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/lab1_q2pointsScene.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/iroha/CITS3003/cits3003_labs/CITS3003-graphics-animation/cits3003_labs/cmake-build-release/CMakeFiles 29
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/lab1_q2pointsScene.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/iroha/CITS3003/cits3003_labs/CITS3003-graphics-animation/cits3003_labs/cmake-build-release/CMakeFiles 0
+.PHONY : CMakeFiles/lab1_q2pointsScene.dir/rule
+
+# Convenience name for target.
+lab1_q2pointsScene: CMakeFiles/lab1_q2pointsScene.dir/rule
+.PHONY : lab1_q2pointsScene
+
+# clean rule for target.
+CMakeFiles/lab1_q2pointsScene.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q2pointsScene.dir/build.make CMakeFiles/lab1_q2pointsScene.dir/clean
+.PHONY : CMakeFiles/lab1_q2pointsScene.dir/clean
+
+#=============================================================================
 # Target rules for target lib/glad/CMakeFiles/glad.dir
 
 # All Build rule for target.
@@ -303,7 +332,7 @@ lib/glfw/src/CMakeFiles/glfw.dir/clean:
 lib/glfw/src/CMakeFiles/update_mappings.dir/all:
 	$(MAKE) $(MAKESILENT) -f lib/glfw/src/CMakeFiles/update_mappings.dir/build.make lib/glfw/src/CMakeFiles/update_mappings.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib/glfw/src/CMakeFiles/update_mappings.dir/build.make lib/glfw/src/CMakeFiles/update_mappings.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/iroha/CITS3003/cits3003_labs/CITS3003-graphics-animation/cits3003_labs/cmake-build-release/CMakeFiles --progress-num=36 "Built target update_mappings"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/iroha/CITS3003/cits3003_labs/CITS3003-graphics-animation/cits3003_labs/cmake-build-release/CMakeFiles --progress-num=39 "Built target update_mappings"
 .PHONY : lib/glfw/src/CMakeFiles/update_mappings.dir/all
 
 # Build rule for subdir invocation for target.

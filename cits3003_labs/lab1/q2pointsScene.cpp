@@ -19,10 +19,10 @@ using uint = unsigned int;
 // define window properties
 #define WINDOW_WIDTH 512
 #define WINDOW_HEIGHT 512
-#define WINDOW_TITLE "Sierpinski Gasket"
+#define WINDOW_TITLE "Lab1 Q2 Points Scene"
 
 // Number of points to generate
-const int NumPoints = 5000;
+const int NumPoints = 4;
 
 // Array to store the points
 glm::vec2 points[NumPoints];
@@ -37,16 +37,10 @@ void init() {
 
     // Select an arbitrary initial point inside of the triangle
     points[0] = glm::vec2(0.25, 0.50);
-
-    // compute and store N-1 new points
-    for (int i = 1; i < NumPoints; ++i) {
-        int j = rand() % 3;   // pick a vertex at random
-
-        // Compute the point halfway between the selected vertex
-        // and the previous point
-        points[i] = (points[i - 1] + vertices[j]) / 2.0f;
-        
-    }
+    points[1] = glm::vec2(0.25, 0.75);
+    points[2] = glm::vec2(0.15, 0.45);
+    points[3] = glm::vec2(0.20, 0.60);
+    
     // -----------------------------------------------------------------
 
     // Create a vertex array object
@@ -72,7 +66,7 @@ void init() {
     glVertexAttribPointer(loc, 2, GL_FLOAT, GL_FALSE, 0, (void*)0);
     
     // Set point size (optional, makes points more visible)
-    // glPointSize(2.0f); 
+    glPointSize(20.0f); 
 
     glClearColor(1.0, 1.0, 1.0, 1.0); /* white background */
 }

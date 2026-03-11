@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/lab1_q2pointsScene.dir/lab1/q2pointsScene.cpp.o CMakeFiles/lab1_q2pointsScene.dir/helpers/ShaderHelper.cpp.o -o lab1_q2pointsScene  lib/glfw/src/libglfw3.a lib/glad/libglad.a /usr/lib/x86_64-linux-gnu/librt.a -lm -ldl 

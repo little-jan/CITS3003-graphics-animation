@@ -1,6 +1,7 @@
 /home/iroha/CITS3003/cits3003_labs/CITS3003-graphics-animation/cits3003_labs/cmake-build-debug/CMakeFiles/lab1_example1.dir
 /home/iroha/CITS3003/cits3003_labs/CITS3003-graphics-animation/cits3003_labs/cmake-build-debug/CMakeFiles/lab1_example2.dir
 /home/iroha/CITS3003/cits3003_labs/CITS3003-graphics-animation/cits3003_labs/cmake-build-debug/CMakeFiles/lab1_q1circle.dir
+/home/iroha/CITS3003/cits3003_labs/CITS3003-graphics-animation/cits3003_labs/cmake-build-debug/CMakeFiles/lab1_q2pointsScene.dir
 /home/iroha/CITS3003/cits3003_labs/CITS3003-graphics-animation/cits3003_labs/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/iroha/CITS3003/cits3003_labs/CITS3003-graphics-animation/cits3003_labs/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/iroha/CITS3003/cits3003_labs/CITS3003-graphics-animation/cits3003_labs/cmake-build-debug/CMakeFiles/list_install_components.dir

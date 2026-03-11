@@ -66,3 +66,6 @@ configure_lab_target(lab1_example2)
 
 add_executable(lab1_q1circle lab1/q1circle.cpp helpers/ShaderHelper.cpp)
 configure_lab_target(lab1_q1circle)
+
+add_executable(lab1_q2pointsScene lab1/q2pointsScene.cpp helpers/ShaderHelper.cpp)
+configure_lab_target(lab1_q2pointsScene)
