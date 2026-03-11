@@ -214,6 +214,19 @@ lab1_q2pointsScene/fast:
 .PHONY : lab1_q2pointsScene/fast
 
 #=============================================================================
+# Target rules for targets named lab1_q3triangleScene
+
+# Build rule for target.
+lab1_q3triangleScene: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab1_q3triangleScene
+.PHONY : lab1_q3triangleScene
+
+# fast build rule for target.
+lab1_q3triangleScene/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q3triangleScene.dir/build.make CMakeFiles/lab1_q3triangleScene.dir/build
+.PHONY : lab1_q3triangleScene/fast
+
+#=============================================================================
 # Target rules for targets named glad
 
 # Build rule for target.
@@ -274,6 +287,7 @@ helpers/ShaderHelper.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_example2.dir/build.make CMakeFiles/lab1_example2.dir/helpers/ShaderHelper.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q1circle.dir/build.make CMakeFiles/lab1_q1circle.dir/helpers/ShaderHelper.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q2pointsScene.dir/build.make CMakeFiles/lab1_q2pointsScene.dir/helpers/ShaderHelper.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q3triangleScene.dir/build.make CMakeFiles/lab1_q3triangleScene.dir/helpers/ShaderHelper.cpp.o
 .PHONY : helpers/ShaderHelper.cpp.o
 
 helpers/ShaderHelper.i: helpers/ShaderHelper.cpp.i
@@ -285,6 +299,7 @@ helpers/ShaderHelper.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_example2.dir/build.make CMakeFiles/lab1_example2.dir/helpers/ShaderHelper.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q1circle.dir/build.make CMakeFiles/lab1_q1circle.dir/helpers/ShaderHelper.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q2pointsScene.dir/build.make CMakeFiles/lab1_q2pointsScene.dir/helpers/ShaderHelper.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q3triangleScene.dir/build.make CMakeFiles/lab1_q3triangleScene.dir/helpers/ShaderHelper.cpp.i
 .PHONY : helpers/ShaderHelper.cpp.i
 
 helpers/ShaderHelper.s: helpers/ShaderHelper.cpp.s
@@ -296,6 +311,7 @@ helpers/ShaderHelper.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_example2.dir/build.make CMakeFiles/lab1_example2.dir/helpers/ShaderHelper.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q1circle.dir/build.make CMakeFiles/lab1_q1circle.dir/helpers/ShaderHelper.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q2pointsScene.dir/build.make CMakeFiles/lab1_q2pointsScene.dir/helpers/ShaderHelper.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q3triangleScene.dir/build.make CMakeFiles/lab1_q3triangleScene.dir/helpers/ShaderHelper.cpp.s
 .PHONY : helpers/ShaderHelper.cpp.s
 
 lab1/example1.o: lab1/example1.cpp.o
@@ -394,6 +410,30 @@ lab1/q2pointsScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q2pointsScene.dir/build.make CMakeFiles/lab1_q2pointsScene.dir/lab1/q2pointsScene.cpp.s
 .PHONY : lab1/q2pointsScene.cpp.s
 
+lab1/q3triangleScene.o: lab1/q3triangleScene.cpp.o
+.PHONY : lab1/q3triangleScene.o
+
+# target to build an object file
+lab1/q3triangleScene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q3triangleScene.dir/build.make CMakeFiles/lab1_q3triangleScene.dir/lab1/q3triangleScene.cpp.o
+.PHONY : lab1/q3triangleScene.cpp.o
+
+lab1/q3triangleScene.i: lab1/q3triangleScene.cpp.i
+.PHONY : lab1/q3triangleScene.i
+
+# target to preprocess a source file
+lab1/q3triangleScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q3triangleScene.dir/build.make CMakeFiles/lab1_q3triangleScene.dir/lab1/q3triangleScene.cpp.i
+.PHONY : lab1/q3triangleScene.cpp.i
+
+lab1/q3triangleScene.s: lab1/q3triangleScene.cpp.s
+.PHONY : lab1/q3triangleScene.s
+
+# target to generate assembly for a file
+lab1/q3triangleScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q3triangleScene.dir/build.make CMakeFiles/lab1_q3triangleScene.dir/lab1/q3triangleScene.cpp.s
+.PHONY : lab1/q3triangleScene.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -414,6 +454,7 @@ help:
 	@echo "... lab1_example2"
 	@echo "... lab1_q1circle"
 	@echo "... lab1_q2pointsScene"
+	@echo "... lab1_q3triangleScene"
 	@echo "... helpers/ShaderHelper.o"
 	@echo "... helpers/ShaderHelper.i"
 	@echo "... helpers/ShaderHelper.s"
@@ -429,6 +470,9 @@ help:
 	@echo "... lab1/q2pointsScene.o"
 	@echo "... lab1/q2pointsScene.i"
 	@echo "... lab1/q2pointsScene.s"
+	@echo "... lab1/q3triangleScene.o"
+	@echo "... lab1/q3triangleScene.i"
+	@echo "... lab1/q3triangleScene.s"
 .PHONY : help
 
 

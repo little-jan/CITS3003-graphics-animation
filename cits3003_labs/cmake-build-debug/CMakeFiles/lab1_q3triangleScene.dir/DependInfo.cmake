@@ -1,0 +1,24 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  )
+
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/iroha/CITS3003/cits3003_labs/CITS3003-graphics-animation/cits3003_labs/helpers/ShaderHelper.cpp" "CMakeFiles/lab1_q3triangleScene.dir/helpers/ShaderHelper.cpp.o" "gcc" "CMakeFiles/lab1_q3triangleScene.dir/helpers/ShaderHelper.cpp.o.d"
+  "/home/iroha/CITS3003/cits3003_labs/CITS3003-graphics-animation/cits3003_labs/lab1/q3triangleScene.cpp" "CMakeFiles/lab1_q3triangleScene.dir/lab1/q3triangleScene.cpp.o" "gcc" "CMakeFiles/lab1_q3triangleScene.dir/lab1/q3triangleScene.cpp.o.d"
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")

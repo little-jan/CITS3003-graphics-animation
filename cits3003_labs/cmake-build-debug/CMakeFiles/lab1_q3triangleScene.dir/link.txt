@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/lab1_q3triangleScene.dir/lab1/q3triangleScene.cpp.o CMakeFiles/lab1_q3triangleScene.dir/helpers/ShaderHelper.cpp.o -o lab1_q3triangleScene  lib/glfw/src/libglfw3.a lib/glad/libglad.a /usr/lib/x86_64-linux-gnu/librt.a -lm -ldl 

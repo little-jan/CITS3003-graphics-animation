@@ -83,6 +83,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/lab1_example2.dir/DependInfo.cmake"
   "CMakeFiles/lab1_q1circle.dir/DependInfo.cmake"
   "CMakeFiles/lab1_q2pointsScene.dir/DependInfo.cmake"
+  "CMakeFiles/lab1_q3triangleScene.dir/DependInfo.cmake"
   "lib/glad/CMakeFiles/glad.dir/DependInfo.cmake"
   "lib/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"
   "lib/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake"

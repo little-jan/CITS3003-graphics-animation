@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CITS3003 Computer Graphics and Animation</title>
+	
+	
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    
+
+	
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+			 background: linear-gradient(to right, #FFFFFF, #E0FFFF, #AFEEEE, #48D1CC, #40E0D0);
+		h1 { font-size: 2em; color: navy; font-weight: bold; }
+		h2 { font-size: 1.5em; color: olive; font-weight: normal; }
+		h3 { font-size: 1.6em; color: navy; font-weight: bold; border-bottom: 1px solid black; padding-bottom: 5px; margin-bottom: 10px; }
+		h4 { text-shadow: 2px 2px 2px #aaa; font-size: 1.5em; color: navy; font-weight: normal; }
+		h5 { background-color: lightgrey; padding: 5px; }
+		h6 { border-bottom: 1px solid black; padding-bottom: 5px; margin-bottom: 10px; }
+		
+		code {
+			font-family: 'Courier New', monospace; /* Monospace font for code */
+			background-color: #f5f5f5; /* Light grey background */
+			border: 1px solid #ccc; /* Subtle border */
+			border-radius: 3px; /* Rounded corners for a modern look */
+			padding: 2px 4px; /* Padding for better readability */
+			font-size: 90%; /* Slightly smaller font size than the surrounding text */
+		}		
+		
+		ol {
+				padding-left: 20px; /* Adjusts padding inside the list */
+				margin-bottom: 15px; /* Space below each list */
+				margin-left: 20px; /* Adjust as needed */
+			}
+			li {
+				margin-bottom: 10px; /* Space between list items */
+			}
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			margin-left: 0;
+		}
+			}
+		
+		th, td {
+			border: 1.5px solid black; /* Light grey border */
+			padding: 8px; /* Spacing inside cells */
+		}
+		th {
+			text-align: left; /* Align header text to the left */
+			background-color: #f2f2f2; /* Light grey background for headers */
+			padding-top: 12px;
+			padding-bottom: 12px;
+		}
+		td {
+			text-align: left; /* Align cell text to the left */
+		}
+		tr:hover {background-color: #ddd;}
+		
+		pre {
+			background-color: #f5f5f5; /* Light grey background */
+			border: 1px solid #ddd; /* Subtle border */
+			border-radius: 5px; /* Rounded corners */
+			padding: 10px; /* Padding inside the pre tag */
+			overflow-x: auto; /* Horizontal scrolling for long lines */
+			font-family: 'Courier New', monospace; /* Monospace font */
+		}
+		
+		.text-image-container {
+			display: flex;
+			align-items: center;
+		}
+		.text-image-container img {
+			margin-left: 10px; /* Adjust spacing as needed */
+		}
+				
+}
+    <!-- More rows and cells here -->
+</table>
+
+			
+     </style> 	
+	 <style  TYPE="text/css">  
+    .paraHead { font-weight: bold; }
+    .important { background: #ffeeaa ; margin: 5px 0px 2px 0px; }
+    .newImportant { background: #ffff00 ! important; margin: 5px 0px 2px 0px; }
+    .solution:link { background: #aaaaaa ; margin: 5px 0px 2px 15px; }
+    .reading { align=right }
+    .deleted { text-decoration: line-through; }
+	
+		
+
+    </style>
+	
+	<script type="text/javascript">
+	//<![CDATA[
+	var pageTracker = window.pageTracker;
+	uwaCore.jsLazyLoad('http://static.weboffice.uwa.edu.au/stats/uwa_ga.js', function() {
+	  var trackerId = 'UA-7622267-1';
+		if ( trackerId != '' ) { try {
+		  pageTracker = _gat._getTracker(trackerId);
+		  pageTracker._setDomainName(".uwa.edu.au");
+		  pageTracker._trackPageview();
+		} catch(err) {} } });
+	//]]>
+	</script>
+
+	
+	  
+</head>
+
+
+<body>
+    <header>
+        <h1>Colour and 2D Rotation</h1>
+        <!-- Add navigation menu or logo here -->
+    </header>
+
+    <main>
+        <section>
+		
+		<h4>Objectives:</h4>
+		In this lab's exercises, you will extend lab#01 by:<br>
+			  <ul>
+				<li>Adding colour to primitives like triangles<br></li>
+				<li>Combine triangles to draw a square.
+				<li>Move triangles around smoothly using <em>double buffering</em><br></li>
+			  </ul>
+
+
+        <ol style="list-style-type:upper-roman"> <li><h3 class="underline">Continuing from last time</h3>
+            <ol style="list-style-type:lower-alpha">
+          <li>Copy your <code>lab1</code> folder to <code>lab2</code>. 
+            On Linux, you can use: <br><p>
+	       <pre>cd ~/cits3003_labs<br>cp -r lab1 lab2</pre>
+          <li>Rename <code>q3triangleScene.cpp</code> to <code>q1square.cpp</code> and remove the other questions
+              from <code>lab2</code> (keep them in <code>lab1</code>).
+              On Linux, you can use: <br><p>
+	       <pre>mv q3triangleScene.cpp q1square.cpp<br>rm q1circle.cpp q2pointsScene.cpp</pre>                
+
+        </ol>
+
+		
+        <!-- More sections as needed -->
+	 
+	 <li><h3 class="underline">Q1. Drawing (one face of) a cube in 2D</h3>
+        <ol style="list-style-type:lower-alpha">
+         <li>Suppose we want to draw a solid 3D cube on our 2D screen.  To start with, suppose one face is facing directly
+             towards us.  Then the other 5 faces are hidden behind this face, so it's easy - we just draw a square (in the
+             next lab we'll come back and consider what to do if there isn't a face directly facing us).  So for now we'll
+             just focus on drawing a square using two triangles, say using: <br><p>
+             
+            <pre>
+const int NumTriangles = 2;  
+const int NumVertices  = 3 * NumTriangles;
+
+glm::vec3 points[NumVertices] = {
+    glm::vec3(-0.5, -0.5, 0.0), glm::vec3(-0.5, 0.5, 0.0), glm::vec3(0.5, -0.5, 0.0),
+    glm::vec3(0.5, 0.5, 0.0),   glm::vec3(0.5, -0.5, 0.0), glm::vec3(-0.5, 0.5, 0.0)
+};
+            </pre><br><p>
+             Here we use 3D coordinates just to avoid changing it later - for now all z-coordinates are 0.0 (which is
+             what OpenGL defaults to anyway if you draw using glm::vec2's).
+             You'll need to change the second argument in the call to <code>glVertexAttribPointer</code> from 
+             <code>2</code> to <code>3</code>.  This is the number of components per vertex - see the 
+             <a href="https://docs.gl/gl3/glVertexAttribPointer">OpenGL Reference Page</a> for this
+             function (for other OpenGL functions, see the 
+             <a href="http://www.opengl.org/sdk/docs/man3/">OpenGL 4.5 Reference Pages</a> on the left of this web page).  <p>
+
+              Use the code above to initialize the triangles and build the program and run it.  
+              Compare with: <br><p>
+			<img src="media/lab2_q1_red.png">	
+              <br><br><p>
+
+         <li> Now suppose we want to see which part of the square is in each triangle.  Add colours by adding 
+              (below the code for <code>points</code> from above):<br><p>
+            <pre>
+glm::vec3 colors[NumVertices] = {
+    glm::vec3(0.0, 1.0, 0.0) /* Green, but choose any 6 colours */, ..., ...,
+    glm::vec3(/* ... */), ..., ...
+};
+            </pre>
+
+         <li> Copy the following <code>init</code> function:<br><p>
+            <pre>
+void init(void) {
+    // Create a vertex array object
+    uint vao;
+    glGenVertexArrays(1, &vao);
+    glBindVertexArray(vao);
+
+    // Create and initialize a buffer object
+    uint buffer;
+    glGenBuffers( 1, &buffer );
+    glBindBuffer( GL_ARRAY_BUFFER, buffer );
+
+    // First, we create an empty buffer of the size we need by passing
+    //   a NULL pointer for the data values
+    glBufferData( GL_ARRAY_BUFFER, sizeof(points) + sizeof(colors),
+		  NULL, GL_STATIC_DRAW );
+
+    // Next, we load the real data in parts.  We need to specify the
+    //   correct byte offset for placing the color data after the point
+    //   data in the buffer.  Conveniently, the byte offset we need is
+    //   the same as the size (in bytes) of the points array, which is
+    //   returned from "sizeof(points)".
+    glBufferSubData( GL_ARRAY_BUFFER, 0, sizeof(points), points );
+    glBufferSubData( GL_ARRAY_BUFFER, sizeof(points), sizeof(colors), colors );
+
+
+    // Load shaders
+    uint program = ShaderHelper::load_shader("vshader24.glsl", "fshader24.glsl");
+    glUseProgram(program);
+
+    // Initialize the vertex position attribute from the vertex shader
+    uint loc = glGetAttribLocation(program, "vPosition");
+    glEnableVertexAttribArray(loc);
+    glVertexAttribPointer(loc, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
+
+    // Likewise, initialize the vertex color attribute.  Once again, we
+    //    need to specify the starting offset (in bytes) for the color
+    //    data.  Just like loading the array, we use "sizeof(points)"
+    //    to determine the correct value.
+    uint vColor = glGetAttribLocation( program, "vColor" );
+    glEnableVertexAttribArray( vColor );
+    glVertexAttribPointer( vColor, 3, GL_FLOAT, GL_FALSE, 0,
+                           (void*)(sizeof(points)) );
+
+    glClearColor(1.0, 1.0, 1.0, 1.0); /* white background */
+}
+            </pre>
+
+         <li> The main difference between this <code>init</code> function and the previous one is that it also sends the 
+              <code>color</code> array to the OpenGL buffer.  Then <code>vshader24.glsl</code> uses this 
+              color information via the <code>vColor</code> shader input variable.
+
+         <li> Make your program and run it.  Verify that the vertices have the colours you assigned.
+
+              Here's mine that uses the colours with just 0.0's and 1.0's, aside from black and white: <br><p><br>
+
+              <img src="media/lab2_q1_color.png">
+              <br><br><p>
+  
+              What colours do you get in between the vertices?  Experiment with different colours.
+    </ol>
+
+
+<li><h3 class="underline">Q2. Rotating in 2D</h3>
+
+    <ol style="list-style-type:lower-alpha">
+         <li> Now suppose we want the cube to rotate such that this face stays facing us.  We could modify all 
+              the vertex positions, but this would mean all positions would be sent to the graphics hardware again 
+              (not an issue with so few vertices, but in general there could be many vertices and we'd want to avoid this).  <p><br>
+
+              Instead we can just pass the angle of rotation to the vertex shader, and have it rotate all the vertex
+              positions by this angle.  In fact we can just pass the time (since the program started) to the shader and have
+              it increase the angle over time.  
+
+         <li> Copy <code>q1square.cpp</code> to <code>q2sqrotate.cpp</code>.
+         <li> Copy the existing
+              <code>vshader24.glsl</code> to <code>lab2_vq2.glsl</code>. In the C++ program
+	      <code>q2sqrotate.cpp</code>, we will use <code>lab2_vq2.glsl</code> and
+	      <code>fshader24.glsl</code> together.  
+		  <p>In the vertex shader <code>lab2_vq2.glsl</code>, add the time variable:</p>
+
+        <pre>uniform float time;</pre>
+        to the top of the file (above <code>main</code>)
+        <li> Change the <code>main</code> function in this vertex shader so that the position is set instead via:<br><p>
+        <pre>
+float angle = time;
+gl_Position = vec4(vPosition.x*cos(angle) - vPosition.y*sin(angle),
+                vPosition.x*sin(angle) + vPosition.y*cos(angle),
+                0.0,
+                1.0);
+        </pre> <br><p> 
+                                    
+              [Why are there four components in gl_Position?  Because OpenGL actually uses 4D
+              homogeneous coordinates - we'll come to this in lectures soon.  For now the last component should
+              always be <code>1.0</code>.] <br><p>
+
+             Here the angle is in radians, so the square rotates roughly every 6.28 seconds.  Why <code>sin</code> and
+             <code>cos</code> here? Well, basically because that's what <code>sin</code> and <code>cos</code> were 
+             invented for! <br> <p>
+
+             <code>cos</code> tells you how much the original (x or y) coordinate affects the same coordinate when rotated. <br>
+             <code>sin</code> tells you how much the original (x or y) coordinate affects the other coordinate when rotated.
+              <br><p>
+
+              See <a href="https://education.siggraph.org/static/HyperGraph/modeling/mod_tran/2drota.htm">2D rotation</a>.
+
+ 
+         <li> Change the call to <code>ShaderHelper::load_shader</code> to use your new vertex shader.
+         <li> Add a new global variable called <code>timeParam</code> in q2sqrotate.cpp. This variable will store
+              the location of the new shader variable <code>time</code>. Add the declaration of <code>timeParam</code> near the top of your q2sqrotate.cpp file, along with any other variable declarations.
+			  <pre>uint timeParam;</pre> <br><p>
+
+			  Set this global variable
+              in the <code>init</code> function 
+              (after the shaders have been loaded and "used") via: <br><p>
+              
+              <pre>timeParam = glGetUniformLocation(program, "time");</pre> <br><p>
+
+              [This is a <em>uniform</em> variable which means that it doesn't change during the drawing of a primitive,
+               hence no array/buffer is needed unlike <code>vPosition</code> and <code>vColor</code>.]
+
+         <li> Set the new uniform <code>time</code> variable before the call to <code>glDrawArrays</code> via: 
+              <pre>glUniform1f(timeParam, glfwGetTime());</pre>
+
+              <code>glUniform1f</code> sets a uniform parameter containing a single float to a value.  Here the value is
+               that returned by <code>glfwGetTime()</code> which is the time (in seconds) the GLFW library was initialized.  
+               See <a href="https://www.glfw.org/docs/3.0/group__time.html">reference page for this function</a>.
+               <!-- See <a href="http://freeglut.sourceforge.net/docs/api.php#StateSetting">glutGet</a> in the <a href="http://freeglut.sourceforge.net/docs/api.php">freeglut API</a> (now in the links to the left of this page).] -->
+               
+
+       <li> Make your program and execute it - you should see your square rotate!  Increase the size of the window and enjoy.
+
+       <li> Experiment with increasing the speed of rotation.  What happens if we square the angle? (Don't watch this too long, particularly if you're a little short of sleep).
+
+       <li> Add <code>glfwWindowHint(GLFW_DOUBLEBUFFER, GL_TRUE);</code> after the call to <code>glfwInit()</code> in <code>main</code>
+            and replace the call to <code>glFlush()</code> 
+            with <code>glfwSwapBuffers(window)</code>. 
+			This enables double buffering, which prevents flickering.
+            <p> Then again, modern graphics hardware often automatically double buffers, so you may not see any difference.  
+			</p> 
+
+              
+		<!-- <li> <img src="https://teaching.csse.uwa.edu.au/units/CITS3003/laboratories/lab2-figs/lab2q2sqrotate2.png" alt="Description">	   -->
+         <video width="512" height="512" controls>
+            <source src="media/lab2_q2.mov" type="video/mp4">
+            Your browser does not support the video tag.
+         </video>        
+
+    </ol>
+
+
+</ol>
+
+			
+	  </section>
+    </main>
+
+    <footer>
+         < <div align="right"><small><b><a href="#top">BACK TO TOP</a></b></small></div>
+</div>
+    </footer>
+
+    <script>
+        // Add JavaScript here
+    </script>
+</body>
+
+
+
+
+</html>
