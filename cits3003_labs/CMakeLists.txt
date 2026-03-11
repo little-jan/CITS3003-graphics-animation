@@ -63,3 +63,6 @@ configure_lab_target(lab1_example1)
 
 add_executable(lab1_example2 lab1/example2.cpp helpers/ShaderHelper.cpp)
 configure_lab_target(lab1_example2)
+
+add_executable(lab1_q1circle lab1/q1circle.cpp helpers/ShaderHelper.cpp)
+configure_lab_target(lab1_q1circle)

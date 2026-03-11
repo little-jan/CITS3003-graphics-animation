@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/lab1_q1circle.dir/lab1/q1circle.cpp.o CMakeFiles/lab1_q1circle.dir/helpers/ShaderHelper.cpp.o -o lab1_q1circle  lib/glfw/src/libglfw3.a lib/glad/libglad.a /usr/lib/x86_64-linux-gnu/librt.a -lm -ldl 

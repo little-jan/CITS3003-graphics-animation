@@ -188,6 +188,19 @@ lab1_example2/fast:
 .PHONY : lab1_example2/fast
 
 #=============================================================================
+# Target rules for targets named lab1_q1circle
+
+# Build rule for target.
+lab1_q1circle: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab1_q1circle
+.PHONY : lab1_q1circle
+
+# fast build rule for target.
+lab1_q1circle/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q1circle.dir/build.make CMakeFiles/lab1_q1circle.dir/build
+.PHONY : lab1_q1circle/fast
+
+#=============================================================================
 # Target rules for targets named glad
 
 # Build rule for target.
@@ -246,6 +259,7 @@ helpers/ShaderHelper.o: helpers/ShaderHelper.cpp.o
 helpers/ShaderHelper.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_example1.dir/build.make CMakeFiles/lab1_example1.dir/helpers/ShaderHelper.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_example2.dir/build.make CMakeFiles/lab1_example2.dir/helpers/ShaderHelper.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q1circle.dir/build.make CMakeFiles/lab1_q1circle.dir/helpers/ShaderHelper.cpp.o
 .PHONY : helpers/ShaderHelper.cpp.o
 
 helpers/ShaderHelper.i: helpers/ShaderHelper.cpp.i
@@ -255,6 +269,7 @@ helpers/ShaderHelper.i: helpers/ShaderHelper.cpp.i
 helpers/ShaderHelper.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_example1.dir/build.make CMakeFiles/lab1_example1.dir/helpers/ShaderHelper.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_example2.dir/build.make CMakeFiles/lab1_example2.dir/helpers/ShaderHelper.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q1circle.dir/build.make CMakeFiles/lab1_q1circle.dir/helpers/ShaderHelper.cpp.i
 .PHONY : helpers/ShaderHelper.cpp.i
 
 helpers/ShaderHelper.s: helpers/ShaderHelper.cpp.s
@@ -264,6 +279,7 @@ helpers/ShaderHelper.s: helpers/ShaderHelper.cpp.s
 helpers/ShaderHelper.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_example1.dir/build.make CMakeFiles/lab1_example1.dir/helpers/ShaderHelper.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_example2.dir/build.make CMakeFiles/lab1_example2.dir/helpers/ShaderHelper.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q1circle.dir/build.make CMakeFiles/lab1_q1circle.dir/helpers/ShaderHelper.cpp.s
 .PHONY : helpers/ShaderHelper.cpp.s
 
 lab1/example1.o: lab1/example1.cpp.o
@@ -314,6 +330,30 @@ lab1/example2.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_example2.dir/build.make CMakeFiles/lab1_example2.dir/lab1/example2.cpp.s
 .PHONY : lab1/example2.cpp.s
 
+lab1/q1circle.o: lab1/q1circle.cpp.o
+.PHONY : lab1/q1circle.o
+
+# target to build an object file
+lab1/q1circle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q1circle.dir/build.make CMakeFiles/lab1_q1circle.dir/lab1/q1circle.cpp.o
+.PHONY : lab1/q1circle.cpp.o
+
+lab1/q1circle.i: lab1/q1circle.cpp.i
+.PHONY : lab1/q1circle.i
+
+# target to preprocess a source file
+lab1/q1circle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q1circle.dir/build.make CMakeFiles/lab1_q1circle.dir/lab1/q1circle.cpp.i
+.PHONY : lab1/q1circle.cpp.i
+
+lab1/q1circle.s: lab1/q1circle.cpp.s
+.PHONY : lab1/q1circle.s
+
+# target to generate assembly for a file
+lab1/q1circle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab1_q1circle.dir/build.make CMakeFiles/lab1_q1circle.dir/lab1/q1circle.cpp.s
+.PHONY : lab1/q1circle.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -332,6 +372,7 @@ help:
 	@echo "... glfw"
 	@echo "... lab1_example1"
 	@echo "... lab1_example2"
+	@echo "... lab1_q1circle"
 	@echo "... helpers/ShaderHelper.o"
 	@echo "... helpers/ShaderHelper.i"
 	@echo "... helpers/ShaderHelper.s"
@@ -341,6 +382,9 @@ help:
 	@echo "... lab1/example2.o"
 	@echo "... lab1/example2.i"
 	@echo "... lab1/example2.s"
+	@echo "... lab1/q1circle.o"
+	@echo "... lab1/q1circle.i"
+	@echo "... lab1/q1circle.s"
 .PHONY : help
 
 
