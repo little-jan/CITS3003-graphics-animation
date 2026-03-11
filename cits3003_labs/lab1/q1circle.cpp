@@ -37,9 +37,22 @@ void init() {
 
     // Select an arbitrary initial point inside of the triangle
     points[0] = glm::vec2(0.25, 0.50);
-    points[1] = glm::vec2(0.10, 0.50);
-    points[2] = glm::vec2(0.40, 0.50);
-    
+
+    // compute and store N-1 new points
+    int i = 1;
+    while (i < NumPoints) {
+        int j = rand() % 3;   // pick a vertex at random
+
+        // Compute the point halfway between the selected vertex
+        // and the previous point
+        glm::vec2 candidate = (points[i - 1] + vertices[j]) / 2.0f;
+        if (glm::length(candidate) <= 1.0f) {
+            points[i] = candidate;
+            i++;
+        }
+        
+    }
+    // -----------------------------------------------------------------
 
     // Create a vertex array object
     uint vao;
